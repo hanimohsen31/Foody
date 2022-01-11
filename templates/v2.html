@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container text-center d-flex justify-content-center my-5">
+    <div class="divcontView col-12 col-md-9 col-lg-6">
+        <h3>{{data['title']}}</h3>
+    <iframe height="315"  class="m-5 w-100"
+        src="https://www.youtube.com/embed/{{src}}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    <h5 class="text-right">المكونات</h5>
+    <p class="text-center">{{data['description']}}</p>
+</div>
+
+</div>
+<div class="container">
+    <a href="/" class="btn btn-outline-danger">رجوع</a>
+</div>
+
+{% endblock %}

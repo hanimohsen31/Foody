@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="container grid-cards my-5">
+        {%for i in data%}
+        <div class="card" style="width: 18rem;">
+            {% set src= i['link'].split('v=')[1] %}
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <iframe width="100" height="200" class="card-img-top"
+            src="https://www.youtube.com/embed/{{src}}" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <div class="card-body">
+              <h5 class="card-title">{{i['title']}}</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <!-- <form action="/v2" method="post">
+                  <input hidden autofocus class="form-control mx-auto w-auto" id="preview" name="preview" type="preview" value={{i}}>
+                  <button class="btn btn-outline-primary" type="submit">Preview</button>
+              </form> -->
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+      <a href="/" class="btn btn-outline-danger">رجوع</a>
+  </div>
+{% endblock %}
